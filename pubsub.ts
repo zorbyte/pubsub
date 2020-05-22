@@ -4,17 +4,17 @@ export type Constructable<T> = { new (): T };
 export class PubSub {
   private subscribers = new Map<unknown, Subscriber<any>[]>();
 
-  public subscribe<T>(subscribtable: Constructable<T>, cb: Subscriber<T>) {
-    const subs = this.subscribers.get(subscribtable) ?? [];
+  public subscribe<T>(subscriptable: Constructable<T>, cb: Subscriber<T>) {
+    const subs = this.subscribers.get(subscriptable) ?? [];
     subs.push(cb);
-    this.subscribers.set(subscribtable, subs);
+    this.subscribers.set(subscriptable, subs);
   }
 
-  public publish<T>(subscribtable: T) {
+  public publish<T>(subscriptable: T) {
     const subs = this.subscribers.get(
-      (subscribtable as T & { constructor: Constructable<T> }).constructor,
+      (subscriptable as T & { constructor: Constructable<T> }).constructor,
     );
     if (!subs?.length) return;
-    subs.forEach((s) => s(subscribtable));
+    subs.forEach((s) => s(subscriptable));
   }
 }
