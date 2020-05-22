@@ -5,7 +5,7 @@ A simple PubSub module for deno.
 ## Example
 
 ```ts
-import { PubSub } from "https://deno.land/x/pubsub@0.0.4/mod.ts";
+import { PubSub } from "https://deno.land/x/pubsub@0.0.5/mod.ts";
 
 class Test {
   public x = "sfg";
