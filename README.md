@@ -14,10 +14,18 @@ class Test {
 const m = new PubSub();
 
 m.subscribe(Test, (t) => {
+  // Prints: Test { x: "sfg" }
   console.log(t);
 });
 
 m.publish(new Test());
+
+m.subscribe(String, (s) => {
+  // Prints: sdfg
+  console.log(s);
+});
+
+m.publish("sdfg");
 ```
 
 # License
