@@ -15,6 +15,6 @@ export class PubSub {
       (subscribtable as T & { constructor: Constructable<T> }).constructor,
     );
     if (!subs?.length) return;
-    subs.forEach(s => s(subscribtable));
+    subs.forEach((s) => s(subscribtable));
   }
 }
