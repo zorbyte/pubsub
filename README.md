@@ -13,7 +13,7 @@ class Test {
 
 const m = new PubSub();
 
-m.subscribe(Test, t => {
+m.subscribe(Test, (t) => {
   console.log(t);
 });
 

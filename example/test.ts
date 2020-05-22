@@ -6,7 +6,7 @@ class Test {
 
 const m = new PubSub();
 
-m.subscribe(Test, b => {
+m.subscribe(Test, (b) => {
   console.log(b);
 });
 
