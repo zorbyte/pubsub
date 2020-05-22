@@ -4,7 +4,10 @@ export type Constructable<T> = { new (): T };
 export class PubSub {
   private subscribers = new Map<unknown, Subscriber<any>[]>();
 
-  public subscribe<T>(subscriptable: Constructable<T>, cb: Subscriber<T>) {
+  public subscribe<T extends Constructable<unknown>>(
+    subscriptable: T,
+    cb: Subscriber<InstanceType<T>>,
+  ) {
     const subs = this.subscribers.get(subscriptable) ?? [];
     subs.push(cb);
     this.subscribers.set(subscriptable, subs);
