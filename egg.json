@@ -1,1 +1,0 @@
-{"name":"pubsub","version": "0.0.6", "description":"A simple PubSub Module for Deno.","stable":false,"files":["./mod.ts", "./pubsub.ts", "./README.md"]}
